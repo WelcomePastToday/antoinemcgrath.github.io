@@ -162,7 +162,7 @@ footer p{margin:0}
 <div class="leaf">
   <main id="main"></main>
   <footer>
-    <p>Records from books carry the quote they were taken from and a link to the page of the scan. They were extracted by a language model from the page text. Records about places were kept only when the quote was found on the cited page. <span id="nfnote"></span>Records from Wikipedia carry no quote; they come from dated permalinks read through the Wayback Machine. Nothing here has been checked by a historian yet; follow the links before relying on any of it.</p>
+    <p>Records from books carry the quote they were taken from and a link to the page of the scan. They were extracted by a language model from the page text. Records about places were kept only when the quote was found on the cited page. <span id="nfnote"></span>Records from Wikipedia carry no quote; they come from dated permalinks read through the Wayback Machine.</p>
     <p id="counts"></p>
     <p><a href="#/credits">Credits</a>: who made, holds and scanned what is shown here, and who did what on this site.</p>
   </footer>
@@ -402,8 +402,7 @@ function creditsView() {
     <li>${p("agent:mcgrath-antoine") || "Antoine McGrath"} — project owner: direction of the research, choice of sources, image crops and readings of doubtful dates.</li>
     <li>${p("agent:grok-xai") || "Grok (xAI)"}, a language model — read the page text of the books and extracted the records. Each record keeps its quote and is checked against the page by a script.</li>
     <li>${p("agent:claude-anthropic")}, a language model — built the dataset and these pages, picked the control points that line the plans up, traced the title lettering, and re-read dates the scanning had garbled.</li>
-    <li>Software: Python, OpenCV, Pillow, NumPy and Tesseract. Wikipedia pages and PDFs were read through the Internet Archive's Wayback Machine so that each has a fixed, dated copy.</li>
-    <li>Nothing here has been checked by a historian yet.</li></ul>
+    <li>Software: Python, OpenCV, Pillow, NumPy and Tesseract. Wikipedia pages and PDFs were read through the Internet Archive's Wayback Machine so that each has a fixed, dated copy.</li></ul>
   <h3 class="sec">Libraries and collections that hold and scanned the material</h3><ul class="list">${holders.map(([h, n]) => `<li>${esc(h)} <span style="color:var(--muted)">${n} source${n > 1 ? "s" : ""}</span></li>`).join("")}</ul>
   <p class="note">Atlas plates and the cover: David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries, CC BY-NC-SA 3.0. Plans from Gallica: Bibliothèque nationale de France. Books: scanned for the Internet Archive by the libraries named above.</p>
   <h3 class="sec">Rights, as the libraries state them</h3><ul class="plain">${rights.map(([r, n]) => `<li>${esc(RIGHTS[r] || r)} — ${n} source${n > 1 ? "s" : ""}</li>`).join("")}</ul>
